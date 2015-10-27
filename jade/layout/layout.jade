@@ -1,0 +1,83 @@
+mixin section(title)
+  section(id=attributes.id)
+    heading
+      div.bg(data-stellar-background-ratio="0.7", data-stellar-vertical-offset="0")
+        .container
+          h2(data-content=title)
+            span #{title}
+        div.grd
+    .container.long
+      block
+doctype
+| 
+| <!--[if lt IE 7]><html lang="en" class="ie6"><![endif]-->
+| <!--[if IE 7]><html lang="en" class="ie7"><![endif]-->
+| <!--[if IE 8]><html lang="en" class="ie8"><![endif]-->
+| <!--[if IE 9]><html lang="en" class="ie9"><![endif]-->
+// [if gt IE 9] <!
+html(class="", lang="en")
+    // <![endif]
+    
+    head
+      title #{title}
+      meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
+      link(rel='stylesheet', href='css/main.css')
+      link(href="http://fonts.googleapis.com/css?family=Merienda+One", rel="stylesheet", type="text/css")
+    body
+      // Fixed navbar
+      .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+        .container
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='/') Frode Hallem
+          .navbar-collapse.collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href='/') Hjem
+              li
+                a(href='/referanser/') Referanser
+              li
+                a(href='/video/') Video
+      div.first
+        .container
+          .jumbotron
+            p
+              | Alvors- og humorinnslag for de fleste anledninger. Frode Hallem er kjent fra &quot;skjult Kamera&quot; p&aring; TVNorge der han er en av de to &quot;g&aelig;rne tr&oslash;nderne&quot;.
+ 
+      article
+        block content
+      footer
+        .container
+          h2 Kontaktinformasjon:
+        .container
+          .col-md-4
+            p
+              strong Adresse:
+            |                 
+            p
+              | Teieb&aelig;rveien 6
+              br
+              |                 7600 Levanger
+          .col-md-4
+            p
+              strong Telefoner:
+            |                 
+            p
+              | arbeid: 74 05 25 25
+              br
+              |                 hjemme: 74 08 35 41
+              br
+              |                 mobil: 482 47 230
+          .col-md-4
+            p
+              strong Epost:
+            |                 
+            p
+              a(href='mailto:frode.asbjorn@hallem.info') frode.asbjorn@hallem.info
+        
+      script(type='text/javascript', src='js/main.js')
