@@ -24,9 +24,14 @@ gulp.task('less', function () {
 
 });
 
+gulp.task('copy', function() {
+  gulp.src('./CNAME')
+    .pipe(gulp.dest('./dist/'))
+});
+
 gulp.task('jade', function() {
   gulp.src('./jade/**/*.jade')
-    .pipe(jade({locals:{mediaroot:''}}))
+    .pipe(jade({locals:{media_root:'/hallem',base_url:'/hallem'}}))
     .pipe(gulp.dest('./dist/'))
 });
  

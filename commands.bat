@@ -74,6 +74,7 @@ if "%command%" EQU "8" goto checkoutindex
 
 :deploy
   node tools\r.js -o tools\build.js
+  call gulp copy
   call gulp less
   call gulp jade
   call gulp deploy

@@ -22,7 +22,7 @@ html(class="", lang="en")
       title #{title}
       meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
       meta(name='viewport', content='width=device-width, initial-scale=1.0')
-      link(rel='stylesheet', href='css/main.css')
+      link(rel='stylesheet', href='#{media_root}/css/main.css')
       link(href="http://fonts.googleapis.com/css?family=Merienda+One", rel="stylesheet", type="text/css")
     body
       // Fixed navbar
@@ -34,15 +34,15 @@ html(class="", lang="en")
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a.navbar-brand(href='/') Frode Hallem
+            a.navbar-brand(href='#{base_url}/') Frode Hallem
           .navbar-collapse.collapse
             ul.nav.navbar-nav
               li.active
-                a(href='/') Hjem
+                a(href='#{base_url}/') Hjem
               li
-                a(href='/referanser/') Referanser
+                a(href='#{base_url}/referanser/') Referanser
               li
-                a(href='/video/') Video
+                a(href='#{base_url}/video/') Video
       div.first
         .container
           .jumbotron
@@ -80,4 +80,4 @@ html(class="", lang="en")
             p
               a(href='mailto:frode.asbjorn@hallem.info') frode.asbjorn@hallem.info
         
-      script(type='text/javascript', src='js/main.js')
+      script(type='text/javascript', src='#{media_root}/js/main.js')

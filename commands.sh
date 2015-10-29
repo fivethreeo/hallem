@@ -74,6 +74,7 @@ case "$command" in
     ;;
   "6")
     node tools/r.js -o tools/build.js
+    gulp copy
     gulp less
     gulp jade
     gulp deploy
