@@ -51,9 +51,14 @@ html(class="", lang="en")
       div.first
         .container
           .jumbotron
-            p
-              | Alvors- og humorinnslag for de fleste anledninger. Frode Hallem er kjent fra &quot;skjult Kamera&quot; p&aring; TVNorge der han er en av de to &quot;g&aelig;rne tr&oslash;nderne&quot;.
- 
+            .media
+              .media-left
+                a(href='#')
+                  img.media-object(src='hallem_foto.jpg', alt='Frode Hallem' class='img-rounded')
+              .media-body
+                h2
+                  | Alvors- og humorinnslag for de fleste anledninger. Frode Hallem er kjent fra &quot;skjult Kamera&quot; p&aring; TVNorge der han er en av de to &quot;g&aelig;rne tr&oslash;nderne&quot;.
+
       article
         block content
       footer

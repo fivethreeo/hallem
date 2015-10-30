@@ -25,13 +25,13 @@ gulp.task('less', function () {
 });
 
 gulp.task('copy', function() {
-  gulp.src('./CNAME')
+  gulp.src(['./CNAME', './static/**/*'])
     .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('jade', function() {
   gulp.src('./jade/**/*.jade')
-    .pipe(jade({locals:{media_root:'/hallem',base_url:'/hallem'}}))
+    .pipe(jade({locals:{media_root:'',base_url:''}}))
     .pipe(gulp.dest('./dist/'))
 });
  
