@@ -25,8 +25,10 @@ gulp.task('less', function () {
 });
 
 gulp.task('copy', function() {
-  gulp.src(['./CNAME', './static/**/*'])
+  gulp.src(['./CNAME', './static/**/*' ])
     .pipe(gulp.dest('./dist/'))
+  gulp.src([path.join(__dirname, 'bower_components', 'video.js') + '/**/*' ])
+    .pipe(gulp.dest('./dist/video.js'))
 });
 
 gulp.task('jade', function() {

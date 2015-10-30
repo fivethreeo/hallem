@@ -24,6 +24,7 @@ html(class="", lang="en")
       meta(name='viewport', content='width=device-width, initial-scale=1.0')
       link(rel='stylesheet', href='#{media_root}/css/main.css')
       link(href="http://fonts.googleapis.com/css?family=Merienda+One", rel="stylesheet", type="text/css")
+      block extrahead
     body
       // Fixed navbar
       block link
@@ -54,7 +55,7 @@ html(class="", lang="en")
             .media
               .media-left
                 a(href='#')
-                  img.media-object(src='hallem_foto.jpg', alt='Frode Hallem' class='img-rounded')
+                  img.media-object(src='#{base_url}/hallem_foto.jpg', alt='Frode Hallem' class='img-rounded')
               .media-body
                 h2
                   | Alvors- og humorinnslag for de fleste anledninger. Frode Hallem er kjent fra &quot;skjult Kamera&quot; p&aring; TVNorge der han er en av de to &quot;g&aelig;rne tr&oslash;nderne&quot;.
@@ -91,3 +92,4 @@ html(class="", lang="en")
               a(href='mailto:frode.asbjorn@hallem.info') frode.asbjorn@hallem.info
         
       script(type='text/javascript', src='#{media_root}/js/main.js')
+      block scripts
