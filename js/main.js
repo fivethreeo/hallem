@@ -29,5 +29,27 @@ require([
     "jquery", "underscore", "bootstrap"
 ],
 function($, _, B$) {
+$(window).scroll(function() {
+if ($(this).scrollTop() > 1){  
+    $('.navbar').addClass("white");
+  }
+  else{
+    $('.navbar').removeClass("white");
+  }
+});
+$("a[href^='#']").on('click', function(event) {
+  var target;
+  target = this.hash;
 
+  event.preventDefault();
+
+  var navOffset;
+  navOffset = $('.navbar').height();
+
+  return $('html, body').animate({
+    scrollTop: $(this.hash).offset().top - navOffset
+  }, 300, function() {
+    return window.history.pushState(null, null, target);
+  });
+});
 });
