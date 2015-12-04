@@ -8,9 +8,10 @@ echo 2: bower install
 echo 3: virtualenv
 echo 4: pip install
 echo 5: gulp
-echo 6: deploy
-echo 7: manage.py
-echo 8: git checkout-index -a --prefix=..\dir\ (export)
+echo 6: gulp serve
+echo 7: build
+echo 8: manage.py
+echo 9: git checkout-index -a --prefix=..\dir\ (export)
 echo.
 
 set /p command="Choose command number:"
@@ -20,9 +21,10 @@ if "%command%" EQU "2" goto bower
 if "%command%" EQU "3" goto virtualenv
 if "%command%" EQU "4" goto pip
 if "%command%" EQU "5" goto gulp
-if "%command%" EQU "6" goto deploy
-if "%command%" EQU "7" goto manage
-if "%command%" EQU "8" goto checkoutindex
+if "%command%" EQU "6" goto gulpserve
+if "%command%" EQU "7" goto build
+if "%command%" EQU "8" goto manage
+if "%command%" EQU "9" goto checkoutindex
 
 :npm
   set /p args="Arguments:"
@@ -72,12 +74,15 @@ if "%command%" EQU "8" goto checkoutindex
   gulp !args!
   goto :EOF
 
-:deploy
-  rjs.bat
+:gulpserve
+  gulp serve
+  goto :EOF
+  
+:build
+  call rjs.bat
   call gulp copy
   call gulp less
   call gulp jade
-  call gulp deploy
   goto :EOF
 
 :manage
