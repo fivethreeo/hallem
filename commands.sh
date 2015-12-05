@@ -7,9 +7,10 @@ echo "2: bower install"
 echo "3: virtualenv"
 echo "4: pip install"
 echo "5: gulp"
-echo "6: deploy"
-echo "7: manage.py"
-echo "8: git checkout-index -a --prefix=../dir/ (export)"
+echo "6: gulp serve"
+echo "7: build"
+echo "8: manage.py"
+echo "9: git checkout-index -a --prefix=../dir/ (export)"
 echo
 
 echo -n "Choose command number:"
@@ -73,13 +74,15 @@ case "$command" in
     gulp $commandarguments
     ;;
   "6")
+    gulp serve
+    ;;
+  "7")
     node tools/r.js -o tools/build.js
     gulp copy
     gulp less
     gulp jade
-    gulp deploy
     ;;
-  "7")
+  "8")
     echo -n "Environment name (default: env):"
     read envname
     if [ -z "$envname" ]; then
@@ -89,7 +92,7 @@ case "$command" in
     read commandarguments
     $envname/bin/python django/manage.py $commandarguments
     ;;
-  "8")
+  "9")
     echo -n "Export to directory (end with backslash):"
     read directory
     if [ ! -d "$directory" ]; then
