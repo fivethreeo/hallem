@@ -7,21 +7,6 @@ html, body {
     /* Remove any browser-default margins. */
     margin: 0;
 }
-#hjem {
-    /* Height and width fallback for older browsers. */
-    height: 100%;
-    width: 100%;
-
-    /* Set the height to match that of the viewport. */
-    height: 100vh;
-
-    /* Set the width to match that of the viewport. */
-    width: 100vw;
-
-    /* Remove any browser-default margins. */
-    margin: 0;
-}
-
 ul.rot li {
     /*background: url(polaroid.svg);*/
     -moz-background-size: 100% 100%;
@@ -117,14 +102,37 @@ footer p {
 body {
   background: #000000;
 }
+.navbar-brand img { height: 116px; width: auto; position: relative; margin-top: -15px; transition: all 2s ease-in;}
 
+@media (min-width: @screen-xs-max) {
+
+#hjem {
+    /* Height and width fallback for older browsers. */
+    height: 100%;
+    width: 100%;
+
+    /* Set the height to match that of the viewport. */
+    height: 100vh;
+
+    /* Set the width to match that of the viewport. */
+    width: 100vw;
+
+    /* Remove any browser-default margins. */
+    margin: 0;
+}
+
+.white .navbar-brand img { height: 50px; width: auto; }
+
+}
 #hjem { position: relative; }
 #hjem, #referanser { background:  radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(217,237,242,1) 41%, rgba(153,205,219,1) 100%); }
 
-.navbar-brand img { height: 116px; width: auto; position: relative; margin-top: -15px; transition: all 2s ease-in;}
-.white .navbar-brand img { height: 50px; width: auto; }
 
 @media (max-width: @screen-xs-max) {
+   
+div.first {
+  padding-top: 130px;
+}
 	.navbar-header { height: 122px; transition: all 2s ease-in;}
 	.navbar-brand { position: absolute; }
 }
